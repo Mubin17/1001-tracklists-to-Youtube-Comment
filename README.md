@@ -4,15 +4,14 @@ This is a Python script that scrapes tracklists from 1001-tracklist.com and conv
 
 The script requests the HTML code of a given tracklist URL, extracts the song titles and artists from the source code, and formats them into a comment-ready string for YouTube with timestamps included. The resulting string can be copied and pasted directly as a comment on a specific YouTube video.
 
-The scraping is done with [Selenium](https://pypi.org/project/selenium/) and [webdriver_manager](https://pypi.org/project/webdriver-manager/).
-
+The scraping is done with [Selenium](https://pypi.org/project/selenium/).
 ## Usage
 
 ```python
 from Tracklist import tracklist1001_url_to_youtube_comment
-Chrome_driver_path = path/chromedriver
 Url = 'https://1001.tl/rn1qu9t'
-tracklist1001_url_to_youtube_comment(Chrome_driver_path, Url)
+comment_string = tracklist1001_url_to_youtube_comment(Url)
+print(comment_string)
 
 # The Output will look something like this:
 """
