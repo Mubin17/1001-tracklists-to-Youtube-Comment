@@ -8,10 +8,13 @@ The scraping is done with [Selenium](https://pypi.org/project/selenium/).
 ## Usage
 
 ```python
-from Tracklist import tracklist1001_url_to_youtube_comment
-Url = 'https://1001.tl/rn1qu9t'
-comment_string = tracklist1001_url_to_youtube_comment(Url)
-print(comment_string)
+url = "https://1001.tl/rn1qu9t"         
+try:
+    formatter = TracklistFormatter(timeout=10)  # Increase timeout if needed
+    formatted_comment = formatter.tracklist1001_url_to_youtube_comment(url)
+    print(formatted_comment)
+except Exception as e:
+    print(f"Error: {str(e)}")
 
 # The Output will look something like this:
 """
